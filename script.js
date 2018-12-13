@@ -39,8 +39,28 @@ function randomColors() {
 		Random6 +
 		'))';
 	css.textContent = body.style.background + ';';
-	color1.value = 'rgb(' + Random1 + ', ' + Random2 + ', ' + Random3 + ')';
-	color2.value = 'rgb(' + Random4 + ', ' + Random5 + ', ' + Random6 + ')';
+
+	function toHexString(number) {
+		var hexString = number.toString(16);
+		if (hexString.length % 2) {
+			hexString = '0' + hexString;
+		}
+		return hexString;
+	}
+
+	color1.value =
+		'#' +
+		toHexString(Random1) +
+		toHexString(Random2) +
+		toHexString(Random3) +
+		'';
+
+	color2.value =
+		'#' +
+		toHexString(Random4) +
+		toHexString(Random5) +
+		toHexString(Random6) +
+		'';
 }
 
 button.addEventListener('click', randomColors);
